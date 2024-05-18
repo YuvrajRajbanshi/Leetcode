@@ -3,25 +3,32 @@ package LengthOfLastWord;
 
 public class Length {
 
-    public static void strLength(String str) {
+    public static int strLength(String str) {
 
         int count = 0;
-        for (int i = str.length(); i > 0; i--) {
+        String result = str.trim();
 
-            if (Character.isWhitespace(i)) {
-                count++;
-                break;
+        for (int i = result.length() - 1; i >= 0; i--) {
+
+            // System.out.println(i);
+            count++;
+            if (result.charAt(i) == ' ') {
+                return count - 1;
             }
 
-            // count++;
         }
-        System.out.println(count);
+        return result.length();
+
     }
 
     public static void main(String[] args) {
-        String str = "Yuvrajdff hjhnghdfsd";
+        // String str = "Yuvrajdff hjhnghdfsd";
+        // System.out.println("Hello yar ");
 
-        strLength(str);
+        String str = "a";
+
+        int leng = strLength(str);
+        System.out.println("The result is " + leng);
     }
 
 }
